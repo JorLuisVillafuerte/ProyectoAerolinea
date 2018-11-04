@@ -17,7 +17,7 @@ public class PasaporteImpJDBC implements PasaporteDAO{
 
 	//Declaro en constantes las consultas SQL a realizar
 	private final String SQL_INSERT = "INSERT INTO Pasaporte(nroPasaporte,paisEmision,autEmision,fechaEmision,fechaVenc) VALUES(?,?,?,?,?)";
-	private final String SQL_UPDATE = "UPDATE Pasaporte SET nroPasaporte=?,paisEmision=?,autEmision=?,fechaEmision=?,fechaVenc=? WHERE idPasaporte=?";
+	private final String SQL_UPDATE = "UPDATE Pasaporte SET nroPasaporte= ?,paisEmision=?,autEmision=?,fechaEmision=?,fechaVenc=? WHERE idPasaporte=?";
 	private final String SQL_DELETE = "DELETE FROM Pasaporte WHERE idPasaporte = ?";
 	private final String SQL_SELECT = "SELECT * FROM Pasaporte";
 	private Connection userConn;
@@ -43,6 +43,7 @@ public class PasaporteImpJDBC implements PasaporteDAO{
             ps.setString(3,pas.getAutoridadEmision());
             ps.setDate(4,pas.getFechaEmision());
             ps.setDate(5,pas.getFechaVencimiento());
+            ps.setInt(6, pas.getIdPasaporte());
             System.out.println("Ejecutando query : "+SQL_INSERT);
             rows = ps.executeUpdate();
             System.out.println("Registro afectados: "+rows);
@@ -68,6 +69,7 @@ public class PasaporteImpJDBC implements PasaporteDAO{
         
         try{
         	conn = (this.userConn != null)? this.userConn : conexionDB.getConexion();
+        	ps = conn.prepareStatement(SQL_UPDATE);
         	ps.setString(1,pas.getNumeroPasaporte());
             ps.setString(2,pas.getPaisEmision());
             ps.setString(3,pas.getAutoridadEmision());

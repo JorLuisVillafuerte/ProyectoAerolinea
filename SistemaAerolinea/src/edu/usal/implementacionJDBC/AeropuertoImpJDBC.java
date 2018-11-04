@@ -16,7 +16,7 @@ public class AeropuertoImpJDBC implements AeropuertoDAO{
 	
 	//Declaro en constantes las consultas SQL a realizar
 	private final String SQL_INSERT = "INSERT INTO Aeropuerto(idAeropuerto,ciudad,provincia,pais) VALUES(?,?,?,?)";
-	private final String SQL_UPDATE = "UPDATE Aeropuerto SET idAeropuerto=?,ciudad=?,provincia=?,pais=? WHERE idAeropuerto=?";
+	private final String SQL_UPDATE = "UPDATE Aeropuerto SET ciudad=?,provincia=?,pais=? WHERE idAeropuerto=?";
 	private final String SQL_DELETE = "DELETE FROM Aeropuerto WHERE idAeropuerto = ?";
 	private final String SQL_SELECT = "SELECT * FROM Aeropuerto";
 	private Connection userConn;

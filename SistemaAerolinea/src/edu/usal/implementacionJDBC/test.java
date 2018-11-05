@@ -8,16 +8,19 @@ import java.util.Iterator;
 import edu.usal.conexion.conexionDB;
 import edu.usal.dto.Aeropuerto;
 import edu.usal.dto.Direccion;
+import edu.usal.dto.LineasAereas;
 import edu.usal.dto.PasajeroFrecuente;
 import edu.usal.dto.Pasaporte;
 import edu.usal.dto.Telefono;
 import edu.usal.excepciones.DAOExcepcion;
 import edu.usal.factory.AeropuertoFactory;
 import edu.usal.factory.DireccionFactory;
+import edu.usal.factory.LineasAereasFactory;
 import edu.usal.factory.PasajeroFrecuenteFactory;
 import edu.usal.factory.PasaporteFactory;
 import edu.usal.interfaces.AeropuertoDAO;
 import edu.usal.interfaces.DireccionDAO;
+import edu.usal.interfaces.LineasAereasDAO;
 import edu.usal.interfaces.PasajeroFrecuenteDAO;
 import edu.usal.interfaces.PasaporteDAO;
 import edu.usal.interfaces.TelefonoDAO;
@@ -62,6 +65,9 @@ public class test {
 			for(PasajeroFrecuente a : lista) {
 				System.out.println(a.getAlianza());
 			}*/
+			LineasAereasDAO line = LineasAereasFactory.getLineasAereasDAO("db");
+			LineasAereas linea = new LineasAereas(1,"LAN","Aerolineas ARG");
+			line.addLineasAereas(linea);
 			
 			
 		} catch (DAOExcepcion e) {

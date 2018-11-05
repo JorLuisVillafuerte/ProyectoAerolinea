@@ -18,6 +18,7 @@ public class Vuelos {
 	public void setNumVuelo(String numVuelo) {
 		this.numVuelo = numVuelo;
 	}
+	
 	public Vuelos(Integer idVuelos, String numVuelo, int cantAsientos, Aeropuerto aerSalida, Aeropuerto aerLlegada,
 			Timestamp fechaSalida, Timestamp fechaLlegada, String tiempoVuelo) {
 		super();
@@ -54,13 +55,13 @@ public class Vuelos {
 	public void setAerLlegada(Aeropuerto aerLlegada) {
 		this.aerLlegada = aerLlegada;
 	}
-	public Date getFechaSalida() {
+	public Timestamp getFechaSalida() {
 		return fechaSalida;
 	}
 	public void setFechaSalida(Timestamp fechaSalida) {
 		this.fechaSalida = fechaSalida;
 	}
-	public Date getFechaLlegada() {
+	public Timestamp getFechaLlegada() {
 		return fechaLlegada;
 	}
 	public void setFechaLlegada(Timestamp fechaLlegada) {

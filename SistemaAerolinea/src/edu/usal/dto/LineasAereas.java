@@ -7,7 +7,7 @@ public class LineasAereas {
 	private Integer idLineasAereas;
 	private String nombreAero;
 	private String alianza;
-	private List<Vuelos> vuelos;
+	
 	
 	public String getNombreAero() {
 		return nombreAero;
@@ -18,12 +18,12 @@ public class LineasAereas {
 	}
 	
 
-	public LineasAereas(Integer idLineasAereas, String nombreAero, String alianza, List<Vuelos> vuelos) {
+	public LineasAereas(Integer idLineasAereas, String nombreAero, String alianza) {
 		super();
 		this.idLineasAereas = idLineasAereas;
 		this.nombreAero = nombreAero;
 		this.alianza = alianza;
-		this.vuelos = vuelos;
+	
 	
 	}
 	
@@ -35,14 +35,6 @@ public class LineasAereas {
 
 	public void setAlianza(String alianza) {
 		this.alianza = alianza;
-	}
-
-	public List<Vuelos> getVuelos() {
-		return vuelos;
-	}
-
-	public void setVuelos(List<Vuelos> vuelos) {
-		this.vuelos = vuelos;
 	}
 
 	public void setIdLineasAereas(Integer idLineasAereas) {
@@ -63,7 +55,7 @@ public class LineasAereas {
 		result = prime * result + ((alianza == null) ? 0 : alianza.hashCode());
 		result = prime * result + ((idLineasAereas == null) ? 0 : idLineasAereas.hashCode());
 		result = prime * result + ((nombreAero == null) ? 0 : nombreAero.hashCode());
-		result = prime * result + ((vuelos == null) ? 0 : vuelos.hashCode());
+		
 		return result;
 	}
 
@@ -90,11 +82,6 @@ public class LineasAereas {
 			if (other.nombreAero != null)
 				return false;
 		} else if (!nombreAero.equals(other.nombreAero))
-			return false;
-		if (vuelos == null) {
-			if (other.vuelos != null)
-				return false;
-		} else if (!vuelos.equals(other.vuelos))
 			return false;
 		return true;
 	}
